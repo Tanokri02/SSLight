@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.pytest_cache/
+
+# Local-only data (not pushed)
+structures/
+embeddings/*
+!embeddings/README.md
+!embeddings/.gitkeep
+data/raw/
+
+# Embedding artifacts — ignore .pt everywhere except trained model weights
+*.pt
+!Model Weights/
+!Model Weights/**
+
+# Structure file formats
+*.cif
+*.cif.gz
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Legacy
+Python Scripits/
+
+# Logs
+embed_run.log

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sslight"
+version = "0.1.0"
+description = "Lightweight ESM-based protein secondary structure prediction"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "SSLight contributors" }]
+dependencies = [
+    "torch>=2.0",
+    "fair-esm>=2.0",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "biopython>=1.80",
+    "aiohttp>=3.9",
+    "pandas>=2.0",
+]
+data = [
+    "biopython>=1.80",
+    "aiohttp>=3.9",
+    "pandas>=2.0",
+]
+
+[project.scripts]
+sslight = "sslight.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
